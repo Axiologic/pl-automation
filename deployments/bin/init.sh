@@ -9,8 +9,7 @@ NETWORK_NAME=$2
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
 if [[ ! -d $COMPANY_NAME ]]; then
-  mkdir $COMPANY_NAME
-  mkdir $COMPANY_NAME/$NETWORK_NAME
+  mkdir -p $COMPANY_NAME/$NETWORK_NAME
 fi
 rm -rf $COMPANY_NAME/$NETWORK_NAME/tmp
 cp -rn  $SCRIPT_DIR/../company-private-configs/network-name/* $COMPANY_NAME/$NETWORK_NAME
