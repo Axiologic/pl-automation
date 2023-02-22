@@ -2,7 +2,7 @@ NETWORKS_FOLDER=$1
 NETWORK_NAME=$2
 CLUSTER_NAME=$3
 # shellcheck disable=SC2207
-folderPaths=($(find $NETWORKS_FOLDER -path "*/editable/$NETWORK_NAME" | cut -f 3 -d "/"))
+folderPaths=($(ls "$NETWORKS_FOLDER/$NETWORK_NAME/editable/"))
 partners="["
 for i in "${!folderPaths[@]}"; do
   if [ ! "${folderPaths[$i]}" == $CLUSTER_NAME ]; then
@@ -13,4 +13,5 @@ if  [ ! "$partners" == "[" ]; then
   partners=$(echo "$partners" | rev | cut -c2- | rev)
 fi
 partners="$partners]"
-echo $partners
+echo $partnersfolderPaths=($(find $NETWORKS_FOLDER -path "*/editable/$NETWORK_NAME" | cut -f 3 -d "/"))
+6
