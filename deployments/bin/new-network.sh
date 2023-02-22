@@ -29,7 +29,7 @@ if [ $enodeAddress == "0.0.0.0" ]; then
   enodeAddress="enode_address: \"$enodeAddress\""
   echo $enodeAddress >>  $TMP_FOLDER_PATH/deployment.yaml
 #  sed -i 's/search_string/replace_string/'
-  sed -i 's/\(enode_address\)/\ \1/' $TMP_FOLDER_PATH/deployment.yaml
+  sed -i 's/\(enode_address\)/\  \1/' $TMP_FOLDER_PATH/deployment.yaml
   helm upgrade --install --wait --timeout=300s qn-0 pharmaledger-imi/quorum-node -f $qnValuesPath -f $ghInfoPath -f $newNetworkService -f $qnInfoPath -f $TMP_FOLDER_PATH/deployment.yaml --set-file use_case.newNetwork.plugin_data_common=$TMP_FOLDER_PATH/new-network.plugin.json,use_case.newNetwork.plugin_data_secrets=$TMP_FOLDER_PATH/new-network.plugin.secrets.json
 fi
 
