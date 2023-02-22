@@ -13,5 +13,3 @@ if  [ ! "$partners" == "[" ]; then
   partners=$(echo "$partners" | rev | cut -c2- | rev)
 fi
 partners="$partners]"
-echo $partnersfolderPaths=($(find $NETWORKS_FOLDER -path "*/editable/$NETWORK_NAME" | cut -f 3 -d "/"))
-6
