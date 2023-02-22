@@ -13,3 +13,4 @@ if  [ ! "$partners" == "[" ]; then
   partners=$(echo "$partners" | rev | cut -c2- | rev)
 fi
 partners="$partners]"
+echo $partners
