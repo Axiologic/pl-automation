@@ -6,9 +6,9 @@ Execute:
 https://github.com/Axiologic/deployments.git
 ```
 ## Clone Automation Repo
-1. Clone pl-automation repo (https://github.com/PharmaLedger-IMI/pl-automation)
+1. Clone pl-automation repo (https://github.com/pharmaledgerassoc/pl-automation)
 ```shell
-git clone https://github.com/PharmaLedger-IMI/pl-automation
+git clone https://github.com/pharmaledgerassoc/pl-automation
 ```
 
 ## Deploy ethereum adapter

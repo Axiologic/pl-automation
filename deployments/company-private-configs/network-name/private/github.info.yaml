@@ -1,5 +1,5 @@
 git_shared_configuration:
-  # -- shared github repository name eg. PharmaLedger-IMI/epi-shared-configuration
+  # -- shared github repository name eg. pharmaledgerassoc/epi-shared-configuration
   repository_name: "skutner/epi-shared-configuration"
   # -- github read-write token
   read_write_token: "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"

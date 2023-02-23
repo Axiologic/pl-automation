@@ -7,12 +7,12 @@ ARG NODE_ALPINE_BASE_IMAGE=node:16.17.0-alpine
 ARG NODE_BASE_IMAGE=node:16.17.0
 FROM $NODE_BASE_IMAGE as base
 
-# GIT_BRANCH=Branch/Tag/Commit Hash to clone from https://github.com/PharmaLedger-IMI/epi-workspace - Defaults to master
+# GIT_BRANCH=Branch/Tag/Commit Hash to clone from https://github.com/pharmaledgerassoc/epi-workspace - Defaults to master
 ARG GIT_BRANCH
 ENV GIT_BRANCH=${GIT_BRANCH:-master}
 ARG SOURCE="/tmp/epi"
 
-RUN git clone -b ${GIT_BRANCH} --single-branch --depth 1 https://github.com/PharmaLedger-IMI/epi-workspace.git ${SOURCE} && \
+RUN git clone -b ${GIT_BRANCH} --single-branch --depth 1 https://github.com/pharmaledgerassoc/epi-workspace.git ${SOURCE} && \
     cd ${SOURCE} && \
     npm run dev-install && \
     node ./node_modules/octopus/scripts/setEnv --file=../../../env.json "node ./bin/octopusRun.js postinstall"

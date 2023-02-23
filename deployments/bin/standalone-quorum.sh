@@ -6,7 +6,7 @@ COMPANY_NAME=$1
 NETWORK_NAME=$2
 . $COMPANY_NAME/$NETWORK_NAME/config-context.sh
 
-helm upgrade --install --wait --timeout=600s quorum pharmaledger-imi/standalone-quorum
+helm upgrade --install --wait --timeout=600s quorum pharmaledgerassoc/standalone-quorum
 
 if test -f $TMP_FOLDER_PATH/rpc-address.yaml; then
   rm -f $TMP_FOLDER_PATH/rpc-address.yaml

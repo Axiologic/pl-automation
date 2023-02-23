@@ -4,9 +4,9 @@
 Create a repository in your account and add the folder "networks" inside it.
 
 ## Clone Automation Repo
-1. Clone pl-automation repo (https://github.com/PharmaLedger-IMI/pl-automation)
+1. Clone pl-automation repo (https://github.com/pharmaledgerassoc/pl-automation)
 ```shell
-git clone https://github.com/PharmaLedger-IMI/pl-automation
+git clone https://github.com/pharmaledgerassoc/pl-automation
 ```
 2. Change directory to pl-automation
 ```shell
