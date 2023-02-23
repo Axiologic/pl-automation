@@ -1,5 +1,5 @@
 #!/bin/bash
-git clone http://github.com/pharmaledger-imi/epi-workspace tmp/epi
+git clone http://github.com/pharmaledgerassoc/epi-workspace tmp/epi
 cd tmp/epi
 chmod +x ../../values.sh 
 source ../../values.sh

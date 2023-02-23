@@ -1,5 +1,5 @@
-NODE_ALPINE_BASE_IMAGE='node:16.17.0-alpine'
-NODE_BASE_IMAGE='node:16.17.0'
+NODE_ALPINE_BASE_IMAGE='node:18.14.1-alpine'
+NODE_BASE_IMAGE='node:18.14.1'
 HUB_IDENTIFIER='docker.io'
 ETH_ADAPTER_NAME='ethadapter'
 ETH_ADAPTER_REPO_NAME='pharmaledger/ethadapter'
