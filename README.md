@@ -7,9 +7,9 @@ Following components should be pre-installed:
 2. helm ( https://helm.sh/docs/intro/install/ )
 3. Install aws cli - Optional ( https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html )
 4. Install doctl (Digital Ocean cli) - Optional ( https://docs.digitalocean.com/reference/doctl/how-to/install/ )
-5. Helm pl-plugin ( https://github.com/pharmaledgerassoc/helm-pl-plugin )
+5. Helm pl-plugin ( https://github.com/pharmaledgerassoc/helm-plugins )
 ```shell
-helm plugin install https://github.com/pharmaledgerassoc/helm-pl-plugin
+helm plugin install https://github.com/pharmaledgerassoc/helm-plugins
 ```
 6. pharmaledgerassoc/helm-charts ( https://github.com/pharmaledgerassoc/helm-charts )
 ```bash
