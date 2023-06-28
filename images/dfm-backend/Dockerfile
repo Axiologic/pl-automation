@@ -8,7 +8,7 @@ RUN apt install -y build-essential
 RUN apt install -y libpq-dev
 
 ENV TARGET_FOLDER_NAME="acdc-workspace"
-RUN git clone https://github.com/pharmaledgerassoc/acdc-components.git $TARGET_FOLDER_NAME
+RUN git clone https://github.com/pharmaledger-imi/acdc-components.git $TARGET_FOLDER_NAME
 
 RUN cd $TARGET_FOLDER_NAME && cd backoffice-backend && \
     npm install --unsafe-perm

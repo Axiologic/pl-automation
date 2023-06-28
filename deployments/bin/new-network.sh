@@ -6,7 +6,7 @@ COMPANY_NAME=$1
 NETWORK_NAME=$2
 . $COMPANY_NAME/$NETWORK_NAME/config-context.sh
 
-helm show values pharmaledgerassoc/quorum-node > $qnValuesPath
+helm show values pharmaledger-imi/quorum-node > $qnValuesPath
 if [ ! -d $TMP_FOLDER_PATH ]; then
   mkdir $TMP_FOLDER_PATH
 fi
@@ -20,7 +20,7 @@ fi
 
 helm pl-plugin --newNetwork -i $qnValuesPath $ghInfoPath $qnInfoPath $newNetworkService $TMP_FOLDER_PATH/deployment.yaml -o $TMP_FOLDER_PATH
 
-helm upgrade --install --debug --wait --timeout=300s qn-0 pharmaledgerassoc/quorum-node -f $qnValuesPath -f $newNetworkService -f $qnInfoPath -f $ghInfoPath -f $TMP_FOLDER_PATH/deployment.yaml --set-file use_case.newNetwork.plugin_data_common=$TMP_FOLDER_PATH/new-network.plugin.json,use_case.newNetwork.plugin_data_secrets=$TMP_FOLDER_PATH/new-network.plugin.secrets.json
+helm upgrade --install --debug --wait --timeout=300s qn-0 pharmaledger-imi/quorum-node -f $qnValuesPath -f $newNetworkService -f $qnInfoPath -f $ghInfoPath -f $TMP_FOLDER_PATH/deployment.yaml --set-file use_case.newNetwork.plugin_data_common=$TMP_FOLDER_PATH/new-network.plugin.json,use_case.newNetwork.plugin_data_secrets=$TMP_FOLDER_PATH/new-network.plugin.secrets.json
 
 enodeAddress=$(cat $qnInfoPath | grep enode_address: | awk '{print $2}' | tr -d '"')
 if [ $enodeAddress == "0.0.0.0" ]; then
@@ -30,7 +30,7 @@ if [ $enodeAddress == "0.0.0.0" ]; then
   echo $enodeAddress >>  $TMP_FOLDER_PATH/deployment.yaml
 #  sed -i 's/search_string/replace_string/'
   sed -i 's/\(enode_address\)/\  \1/' $TMP_FOLDER_PATH/deployment.yaml
-  helm upgrade --install --wait --timeout=300s qn-0 pharmaledgerassoc/quorum-node -f $qnValuesPath -f $ghInfoPath -f $newNetworkService -f $qnInfoPath -f $TMP_FOLDER_PATH/deployment.yaml --set-file use_case.newNetwork.plugin_data_common=$TMP_FOLDER_PATH/new-network.plugin.json,use_case.newNetwork.plugin_data_secrets=$TMP_FOLDER_PATH/new-network.plugin.secrets.json
+  helm upgrade --install --wait --timeout=300s qn-0 pharmaledger-imi/quorum-node -f $qnValuesPath -f $ghInfoPath -f $newNetworkService -f $qnInfoPath -f $TMP_FOLDER_PATH/deployment.yaml --set-file use_case.newNetwork.plugin_data_common=$TMP_FOLDER_PATH/new-network.plugin.json,use_case.newNetwork.plugin_data_secrets=$TMP_FOLDER_PATH/new-network.plugin.secrets.json
 fi
 
 echo "network_name: \"$NETWORK_NAME\"" > $TMP_FOLDER_PATH/networkName.yaml

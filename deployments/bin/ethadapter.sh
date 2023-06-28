@@ -14,7 +14,7 @@ if test -f $TMP_FOLDER_PATH/ethadapter-values.yaml; then
   rm -f $TMP_FOLDER_PATH/ethadapter-values.yaml
 fi
 
-helm show values pharmaledgerassoc/ethadapter > $ethValuesPath
+helm show values pharmaledger-imi/ethadapter > $ethValuesPath
 if [ ! -f $TMP_FOLDER_PATH/ethadapter-values.yaml ]; then
   echo "smart_contract_shared_configuration:" >>  $TMP_FOLDER_PATH/ethadapter-values.yaml
   cat $ghInfoPath | grep "repository_name\|read_write_token" >> $TMP_FOLDER_PATH/ethadapter-values.yaml
@@ -36,4 +36,4 @@ fi
 echo "network_name: \"$NETWORK_NAME\"" > $TMP_FOLDER_PATH/networkName.yaml
 
 helm pl-plugin --ethAdapter -i $ethValuesPath $ghInfoPath $ethServicePath $qnInfoPath $smartContractInfoPath $ethInfoPath $ethInfoPath $TMP_FOLDER_PATH/ethadapter-values.yaml $TMP_FOLDER_PATH/rpc-address.yaml $TMP_FOLDER_PATH/networkName.yaml -o $TMP_FOLDER_PATH
-helm upgrade --install --debug --wait --timeout=600s ethadapter pharmaledgerassoc/ethadapter -f $ethServicePath -f $ethInfoPath -f $TMP_FOLDER_PATH/ethadapter-values.yaml -f $TMP_FOLDER_PATH/rpc-address.yaml -f $TMP_FOLDER_PATH/networkName.yaml --set-file config.smartContractInfo=$TMP_FOLDER_PATH/eth-adapter.plugin.json,secrets.orgAccountJson=$TMP_FOLDER_PATH/orgAccount.json
+helm upgrade --install --debug --wait --timeout=600s ethadapter pharmaledger-imi/ethadapter -f $ethServicePath -f $ethInfoPath -f $TMP_FOLDER_PATH/ethadapter-values.yaml -f $TMP_FOLDER_PATH/rpc-address.yaml -f $TMP_FOLDER_PATH/networkName.yaml --set-file config.smartContractInfo=$TMP_FOLDER_PATH/eth-adapter.plugin.json,secrets.orgAccountJson=$TMP_FOLDER_PATH/orgAccount.json

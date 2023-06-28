@@ -1,4 +1,4 @@
-git clone http://github.com/pharmaledgerassoc/epi-workspace tmp/epi
+git clone http://github.com/pharmaledger-imi/epi-workspace tmp/epi
 cd tmp/epi
 rm -rf ethadapter
 git clone http://github.com/opendsu/eth-adapter ethadapter

@@ -1,12 +1,12 @@
 # Create Shared Network
 ## Shared configuration repo fork
-1. Fork pharmaledgerassoc/epi-shared-configuration repository with your account  (https://github.com/pharmaledgerassoc/epi-shared-configuration)
+1. Fork pharmaledger-imi/epi-shared-configuration repository with your account  (https://github.com/pharmaledger-imi/epi-shared-configuration)
 2. Create a directory under the appropriate network/environment and perform an initial commit 
 
 ## Clone Automation Repo
-1. Clone pl-automation repo (https://github.com/pharmaledgerassoc/pl-automation)
+1. Clone pl-automation repo (https://github.com/pharmaledger-imi/pl-automation)
 ```shell
-git clone https://github.com/pharmaledgerassoc/pl-automation
+git clone https://github.com/pharmaledger-imi/pl-automation
 ```
 2. Change directory to pl-automation
 ```shell
@@ -48,7 +48,7 @@ For macOS if this above command throw an error execute folowing steps:
 which will deploy the quorum node and will deploy the smart contract
 
 ## Shared Repo Update & Pull Request
-When everything is complete, a Pull Request to pharmaledgerassoc/epi-shared-configuration should be created for review by the repo admin
+When everything is complete, a Pull Request to pharmaledger-imi/epi-shared-configuration should be created for review by the repo admin
 
 ## Specify peers & propose as validators
 1. Populate the nodes to be recognised as static peers and validators (peer naming as in github networks/"my-company-name"/editable repo directory) in ./deployments/bin/"my-company-name"/"shared-network-name"/private/update-partners.info.yaml
